@@ -15,7 +15,7 @@ module.exports = {
         danger: '#E80000',
         warning: '#D7D404',
         success: '#01A30F',
-        bgLight: '#221F25',
+        bgLight: '#46404C',
       },
     },
   },
