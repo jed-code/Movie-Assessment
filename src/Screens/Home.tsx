@@ -12,6 +12,7 @@ const Home = () => {
   const [searchValue, setSearchValue] = useState('');
   const { searchedMovies, status, error } = useAppSelector((state: any) => state.movies);
   let newSearchData = formatData(searchedMovies);
+  // console.log('newSearchData', JSON.stringify(newSearchData, null, 2));
 
   return (
     <Container>

@@ -12,13 +12,14 @@ const blurhash =
 
 const MovieCard: React.FC<movieCardProps> = ({ movie }) => {
   let dispatch = useAppDispatch();
-  const handleMovieDetails = async (id: string) => {
-    await dispatch(getMovieById(id));
+  const handleMovieDetails = (id: string) => {
+    dispatch(getMovieById(id));
     router.push(`/movieDetails`);
   };
+
   return (
     <TouchableOpacity
-      onPress={() => handleMovieDetails(movie.IMBD_ID)}
+      onPress={() => handleMovieDetails(movie?.IMDB_ID)}
       className="mx-auto mb-4 h-[252px] w-[170px]">
       <Image
         style={styles.image}

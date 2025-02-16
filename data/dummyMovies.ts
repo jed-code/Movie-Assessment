@@ -2,7 +2,7 @@ export const dummyMovies = [
   {
     TITLE: 'Red One',
     YEAR: 2024,
-    IMBD_ID: 'tt14948432',
+    IMDB_ID: 'tt14948432',
     RANK: 680,
     ACTORS: 'Dwayne Johnson, Chris Evans',
     AKA: 'Red One (2024) ',
@@ -16,7 +16,7 @@ export const dummyMovies = [
   {
     TITLE: 'Gladiator II',
     YEAR: 2024,
-    IMBD_ID: 'tt9218128',
+    IMDB_ID: 'tt9218128',
     RANK: 28,
     ACTORS: 'Paul Mescal, Denzel Washington',
     AKA: 'Gladiator II (2024) ',
@@ -30,7 +30,7 @@ export const dummyMovies = [
   {
     TITLE: 'Silvio',
     YEAR: 2024,
-    IMBD_ID: 'tt9422624',
+    IMDB_ID: 'tt9422624',
     RANK: 40672,
     ACTORS: 'Rodrigo Faro, Johnnas Oliva',
     AKA: 'Silvio (2024) ',
@@ -44,7 +44,7 @@ export const dummyMovies = [
   {
     TITLE: 'Buffalo Kids',
     YEAR: 2024,
-    IMBD_ID: 'tt26530493',
+    IMDB_ID: 'tt26530493',
     RANK: 9702,
     ACTORS: 'Gemma Arterton, Sean Bean',
     AKA: 'Buffalo Kids (2024)',
@@ -58,7 +58,7 @@ export const dummyMovies = [
   {
     TITLE: 'Moana 2',
     YEAR: 2024,
-    IMBD_ID: 'tt13622970',
+    IMDB_ID: 'tt13622970',
     RANK: 89,
     ACTORS: "Auli'i Cravalho, Dwayne Johnson",
     AKA: 'Moana 2 (2024) ',
@@ -72,7 +72,7 @@ export const dummyMovies = [
   {
     TITLE: 'Kraven the Hunter',
     YEAR: 2024,
-    IMBD_ID: 'tt8790086',
+    IMDB_ID: 'tt8790086',
     RANK: 154,
     ACTORS: 'Aaron Taylor-Johnson, Ariana DeBose',
     AKA: 'Kraven the Hunter (2024) ',
@@ -86,7 +86,7 @@ export const dummyMovies = [
   {
     TITLE: 'Superman Returns',
     YEAR: 2006,
-    IMBD_ID: 'tt0348150',
+    IMDB_ID: 'tt0348150',
     RANK: 3854,
     ACTORS: 'Brandon Routh, Kevin Spacey',
     AKA: 'Superman Returns (2006) ',
@@ -100,7 +100,7 @@ export const dummyMovies = [
   {
     TITLE: 'La Dolce Villa',
     YEAR: 2025,
-    IMBD_ID: 'tt31519456',
+    IMDB_ID: 'tt31519456',
     RANK: 1692,
     ACTORS: 'Scott Foley, Violante Placido',
     AKA: 'La Dolce Villa (2025) ',
@@ -114,7 +114,7 @@ export const dummyMovies = [
   {
     TITLE: 'Joker: Folie à Deux',
     YEAR: 2024,
-    IMBD_ID: 'tt11315808',
+    IMDB_ID: 'tt11315808',
     RANK: 453,
     '#ACTORS': 'Joaquin Phoenix, Lady Gaga',
     AKA: 'Joker: Folie à Deux (2024) ',
@@ -128,7 +128,7 @@ export const dummyMovies = [
   {
     TITLE: "The Tiger's Apprentice",
     YEAR: 2024,
-    IMBD_ID: 'tt5834410',
+    IMDB_ID: 'tt5834410',
     RANK: 14808,
     ACTORS: 'Henry Golding, Brandon Soo Hoo',
     AKA: "The Tiger's Apprentice (2024) ",

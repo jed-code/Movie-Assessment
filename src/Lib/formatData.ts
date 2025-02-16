@@ -1,6 +1,6 @@
-export const formatData = async (apiData: any) => {
-  if (apiData.length > 0) {
-    const data = await apiData?.map((item: any) => ({
+export const formatData = (apiData: any) => {
+  if (apiData?.length > 0) {
+    const data = apiData?.map((item: any) => ({
       TITLE: item['#TITLE'],
       YEAR: item['#YEAR'],
       IMDB_ID: item['#IMDB_ID'],

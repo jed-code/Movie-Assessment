@@ -1,3 +1,4 @@
+import { View } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
 import MovieCard from './MovieCard';
 
@@ -6,13 +7,15 @@ interface moviesProps {
 }
 const movieList: React.FC<moviesProps> = ({ movies }) => {
   return (
-    <FlashList
-      data={movies}
-      numColumns={2}
-      renderItem={({ item }: any) => <MovieCard movie={item} />}
-      estimatedItemSize={150}
-      contentContainerStyle={{ paddingBottom: 135 }}
-    />
+    <View className="W-full h-full">
+      <FlashList
+        data={movies}
+        numColumns={2}
+        renderItem={({ item }: any) => <MovieCard movie={item} />}
+        estimatedItemSize={150}
+        contentContainerStyle={{ paddingBottom: 135 }}
+      />
+    </View>
   );
 };
 export default movieList;
