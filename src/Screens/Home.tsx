@@ -1,22 +1,17 @@
 import React, { useState } from 'react';
 import { View, Text } from 'react-native';
-import { getMovieById } from '../Redux/Slices/movieSlice';
-import { useAppDispatch } from '../Lib/hooks/useDispatch';
 import { useAppSelector } from '../Lib/hooks/useAppSelector';
 import { searchMovieByName } from '../Redux/Slices/movieSlice';
 import { Container } from '~/components/Container';
 import SearchInput from '~/components/SearchInput';
+import MovieList from '~/components/MovieList';
+import { dummyMovies } from '~/data/dummyMovies';
+import { formatData } from '../Lib/formatData';
 
 const Home = () => {
-  let dispatch = useAppDispatch();
   const [searchValue, setSearchValue] = useState('');
   const { searchedMovies, status, error } = useAppSelector((state: any) => state.movies);
-
-  if (searchValue) {
-    console.log('Show search result');
-  } else {
-    console.log('Dont show search result');
-  }
+  let newSearchData = formatData(searchedMovies);
 
   return (
     <Container>
@@ -28,9 +23,16 @@ const Home = () => {
             searchMovieByName={searchMovieByName}
           />
         </View>
-        <View className="mt-3">
-          <Text className="text-white">Home</Text>
-        </View>
+        {status === 'loading' ? (
+          <View className="h-full w-full flex-row items-center justify-center">
+            <Text className=" text-3xl text-white">Loading......</Text>
+          </View>
+        ) : (
+          <View className="mt-4 h-full w-full">
+            {searchValue && <MovieList movies={newSearchData} />}
+            {!searchValue && <MovieList movies={dummyMovies} />}
+          </View>
+        )}
       </View>
     </Container>
   );

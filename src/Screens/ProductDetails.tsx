@@ -1,18 +1,62 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
+import { ScrollView, View, Text } from 'react-native';
+import { useSelector } from 'react-redux';
+import { Container } from '~/components/Container';
+import { FlashList } from '@shopify/flash-list';
+import MoviePoster from '~/components/MoviePoster';
+import ActorItem from '~/components/ActorItem';
+import ReviewSummary from '~/components/ReviewSummary';
+import KeywordsItem from '~/components/KeywordsItem';
 
-const ProductDetails = () => {
-  const dispatch = useDispatch();
-  const { movieDetails, status, error } = useSelector((state: any) => state.movies);
-
-  console.log('searchedMovies', JSON.stringify(movieDetails, null, 2));
+const MovieDetails = () => {
+  const { movieDetails } = useSelector((state: any) => state.movies);
 
   return (
-    <View className="w-full flex-1 flex-row items-center justify-center bg-primary">
-      <Text className="text-secondary">Product Details</Text>
-    </View>
+    <Container>
+      <View className="w-full flex-1">
+        <MoviePoster movieDetails={movieDetails} />
+        <View className="w-full px-4 pt-4">
+          <Text className="text-main text-bold text-2xl">{movieDetails?.short?.name}</Text>
+        </View>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ justifyContent: 'center', padding: 15 }}
+          className="w-full flex-1 pb-20">
+          <View className="w-full">
+            <Text className="w-full text-wrap text-justify text-base font-semibold text-secondary ">
+              {movieDetails?.short?.description}
+            </Text>
+            <Text className="text-main mt-2 w-full text-wrap py-2 text-2xl font-semibold">
+              Actors
+            </Text>
+            <FlashList
+              data={movieDetails?.short?.actor}
+              numColumns={1}
+              renderItem={({ item }: any) => <ActorItem actor={item} />}
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+              estimatedItemSize={150}
+              contentContainerStyle={{ paddingBottom: 0 }}
+            />
+            {movieDetails?.short?.review?.reviewBody && (
+              <View className="w-full">
+                <Text className="text-main text-2xl">Reviews</Text>
+                <ReviewSummary
+                  reviewBody={movieDetails?.short?.review?.reviewBody}
+                  reviewRating={movieDetails?.short?.review?.reviewRating}
+                />
+              </View>
+            )}
+
+            <View className="w-full">
+              <Text className="text-main text-2xl">Keywords</Text>
+              <KeywordsItem keywords={movieDetails?.short?.keywords} />
+            </View>
+          </View>
+        </ScrollView>
+      </View>
+    </Container>
   );
 };
 
-export default ProductDetails;
+export default MovieDetails;

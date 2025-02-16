@@ -16,6 +16,8 @@ module.exports = {
         warning: '#D7D404',
         success: '#01A30F',
         bgLight: '#46404C',
+        main: '#4750FC',
+        darkColor: '#1D1920',
       },
     },
   },

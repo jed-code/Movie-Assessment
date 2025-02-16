@@ -1,4 +1,4 @@
-import { SafeAreaView, StatusBar, StatusBarStyle } from 'react-native';
+import { SafeAreaView, StatusBar } from 'react-native';
 
 export const Container = ({ children }: { children: React.ReactNode }) => {
   return (

@@ -11,7 +11,7 @@ export default function Layout() {
       <PersistGate loading={null} persistor={persistor}>
         <Stack screenOptions={{ headerShown: false }}>
           <Stack.Screen name="index" options={{ headerShown: false }} />
-          <Stack.Screen name="productDetails" options={{ headerShown: false }} />
+          <Stack.Screen name="movieDetails" options={{ headerShown: false }} />
         </Stack>
       </PersistGate>
     </Provider>

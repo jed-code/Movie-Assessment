@@ -11,8 +11,6 @@ const initialState: MovieState = {
     description: [],
   },
   movieDetails: null,
-  moviePoster: null,
-  movieTrailer: null,
   status: '',
   error: null,
 };
@@ -32,7 +30,7 @@ export const searchMovieByName = createAsyncThunk(
   async (movieName: string, { rejectWithValue }) => {
     try {
       const response = await axios.get(`${URL}search?q=${movieName}`);
-      return response.data;
+      return response.data.description;
     } catch (error) {
       return rejectWithValue(`No ${movieName} movie found`);
     }
@@ -44,30 +42,6 @@ export const getMovieById = createAsyncThunk(
   async (movieId: string, { rejectWithValue }) => {
     try {
       const response = await axios.get(`${URL}search?tt=${movieId}`);
-      return response.data;
-    } catch (error) {
-      return rejectWithValue(`No movie found`);
-    }
-  }
-);
-
-export const getMoviePoster = createAsyncThunk(
-  'moviePoster',
-  async (movieId: string, { rejectWithValue }) => {
-    try {
-      const response = await axios.get(`${URL}photo/${movieId}`);
-      return response.data;
-    } catch (error) {
-      return rejectWithValue(`No movie found`);
-    }
-  }
-);
-
-export const getMovieTrailer = createAsyncThunk(
-  'movieTrailer',
-  async (movieId: string, { rejectWithValue }) => {
-    try {
-      const response = await axios.get(`${URL}media/${movieId}`);
       return response.data;
     } catch (error) {
       return rejectWithValue(`No movie found`);
@@ -127,32 +101,6 @@ const movieSlice = createSlice({
         state.error = null;
       })
       .addCase(getMovieById.rejected, (state, action) => {
-        state.status = 'failed';
-        state.error = action.payload as string;
-      })
-      // Fetch movie poster
-      .addCase(getMoviePoster.pending, (state) => {
-        state.status = 'loading';
-      })
-      .addCase(getMoviePoster.fulfilled, (state, action) => {
-        state.status = 'succeeded';
-        state.moviePoster = action.payload;
-        state.error = null;
-      })
-      .addCase(getMoviePoster.rejected, (state, action) => {
-        state.status = 'failed';
-        state.error = action.payload as string;
-      })
-      // Fetch movie trailer
-      .addCase(getMovieTrailer.pending, (state) => {
-        state.status = 'loading';
-      })
-      .addCase(getMovieTrailer.fulfilled, (state, action) => {
-        state.status = 'succeeded';
-        state.movieTrailer = action.payload;
-        state.error = null;
-      })
-      .addCase(getMovieTrailer.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.payload as string;
       });

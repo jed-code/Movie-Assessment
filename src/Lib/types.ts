@@ -17,8 +17,6 @@ export interface MovieState {
   movies: SearchField[];
   searchedMovies: SearchField;
   movieDetails: MovieField | null;
-  moviePoster: string | null;
-  movieTrailer: string | null;
   status: '' | 'loading' | 'succeeded' | 'failed' | 'error';
   error: string | null;
 }
