@@ -7,6 +7,7 @@ import SearchInput from '~/components/SearchInput';
 import MovieList from '~/components/MovieList';
 import { dummyMovies } from '~/data/dummyMovies';
 import { formatData } from '../Lib/formatData';
+import Loading from '../../components/Loading';
 
 const Home = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -26,7 +27,7 @@ const Home = () => {
         </View>
         {status === 'loading' ? (
           <View className="h-full w-full flex-row items-center justify-center">
-            <Text className=" text-3xl text-white">Loading......</Text>
+            <Loading />
           </View>
         ) : (
           <View className="mt-4 h-full w-full">

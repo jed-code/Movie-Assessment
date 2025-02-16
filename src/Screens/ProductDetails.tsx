@@ -2,7 +2,6 @@ import React from 'react';
 import { ScrollView, View, Text } from 'react-native';
 import { useSelector } from 'react-redux';
 import { Container } from '~/components/Container';
-// import { FlashList } from '@shopify/flash-list';
 import MoviePoster from '~/components/MoviePoster';
 import ActorItem from '~/components/ActorItem';
 import ReviewSummary from '~/components/ReviewSummary';
@@ -37,16 +36,7 @@ const MovieDetails = () => {
                 return <ActorItem actor={item} index={i} key={i} />;
               })}
             </ScrollView>
-            {/* <FlashList
-              data={movieDetails?.short?.actor}
-              numColumns={1}
-              renderItem={({ item }: any) => <ActorItem actor={item} />}
-              horizontal={true}
-              showsHorizontalScrollIndicator={false}
-              nestedScrollEnabled={true}
-              estimatedItemSize={150}
-              contentContainerStyle={{ paddingBottom: 0 }}
-            /> */}
+
             {movieDetails?.short?.review?.reviewBody && (
               <View className="w-full">
                 <Text className="text-main text-2xl">Reviews</Text>
